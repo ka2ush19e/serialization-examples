@@ -1,5 +1,5 @@
 {
-  "namespace": "jp.gr.java_conf.ka2ush19e.serializations.avro",
+  "namespace": "jp.gr.java_conf.ka2ush19e.serializations.avro.schema",
   "type": "record",
   "name": "User",
   "fields": [

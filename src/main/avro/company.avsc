@@ -1,0 +1,39 @@
+{
+  "namespace": "jp.gr.java_conf.ka2ush19e.serializations.avro.schema",
+  "name": "Company",
+  "type": "record",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "employees",
+      "type": {
+        "type": "array",
+        "items": {
+          "name": "Employee",
+          "type": "record",
+          "fields": [
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "job",
+              "type": {
+                "name": "Job",
+                "type": "enum",
+                "symbols": [
+                  "Sales",
+                  "Engineer",
+                  "Analyst"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

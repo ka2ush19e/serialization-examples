@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package jp.gr.java_conf.ka2ush19e.serializations.avro;  
+package jp.gr.java_conf.ka2ush19e.serializations.avro.schema;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class User extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"jp.gr.java_conf.ka2ush19e.serializations.avro\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"favorite_number\",\"type\":[\"int\",\"null\"]},{\"name\":\"favorite_color\",\"type\":[\"string\",\"null\"]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"jp.gr.java_conf.ka2ush19e.serializations.avro.schema\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"favorite_number\",\"type\":[\"int\",\"null\"]},{\"name\":\"favorite_color\",\"type\":[\"string\",\"null\"]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.Integer favorite_number;
@@ -96,18 +96,18 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   /** Creates a new User RecordBuilder */
-  public static jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder newBuilder() {
-    return new jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder();
+  public static jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder newBuilder() {
+    return new jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder();
   }
   
   /** Creates a new User RecordBuilder by copying an existing Builder */
-  public static jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder newBuilder(jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder other) {
-    return new jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder(other);
+  public static jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder newBuilder(jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder other) {
+    return new jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder(other);
   }
   
   /** Creates a new User RecordBuilder by copying an existing User instance */
-  public static jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder newBuilder(jp.gr.java_conf.ka2ush19e.serializations.avro.User other) {
-    return new jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder(other);
+  public static jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder newBuilder(jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User other) {
+    return new jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder(other);
   }
   
   /**
@@ -122,11 +122,11 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
 
     /** Creates a new Builder */
     private Builder() {
-      super(jp.gr.java_conf.ka2ush19e.serializations.avro.User.SCHEMA$);
+      super(jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder other) {
+    private Builder(jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.name)) {
         this.name = data().deepCopy(fields()[0].schema(), other.name);
@@ -143,8 +143,8 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Creates a Builder by copying an existing User instance */
-    private Builder(jp.gr.java_conf.ka2ush19e.serializations.avro.User other) {
-            super(jp.gr.java_conf.ka2ush19e.serializations.avro.User.SCHEMA$);
+    private Builder(jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User other) {
+            super(jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.SCHEMA$);
       if (isValidValue(fields()[0], other.name)) {
         this.name = data().deepCopy(fields()[0].schema(), other.name);
         fieldSetFlags()[0] = true;
@@ -165,7 +165,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'name' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder setName(java.lang.CharSequence value) {
+    public jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder setName(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.name = value;
       fieldSetFlags()[0] = true;
@@ -178,7 +178,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Clears the value of the 'name' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder clearName() {
+    public jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder clearName() {
       name = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -190,7 +190,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'favorite_number' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder setFavoriteNumber(java.lang.Integer value) {
+    public jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder setFavoriteNumber(java.lang.Integer value) {
       validate(fields()[1], value);
       this.favorite_number = value;
       fieldSetFlags()[1] = true;
@@ -203,7 +203,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Clears the value of the 'favorite_number' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder clearFavoriteNumber() {
+    public jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder clearFavoriteNumber() {
       favorite_number = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -215,7 +215,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'favorite_color' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder setFavoriteColor(java.lang.CharSequence value) {
+    public jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder setFavoriteColor(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.favorite_color = value;
       fieldSetFlags()[2] = true;
@@ -228,7 +228,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Clears the value of the 'favorite_color' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.User.Builder clearFavoriteColor() {
+    public jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User.Builder clearFavoriteColor() {
       favorite_color = null;
       fieldSetFlags()[2] = false;
       return this;

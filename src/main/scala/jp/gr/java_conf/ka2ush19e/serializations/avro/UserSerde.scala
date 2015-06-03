@@ -6,16 +6,18 @@ import scala.collection.JavaConversions._
 
 import org.apache.avro.Schema
 import org.apache.avro.file.{ DataFileReader, DataFileWriter }
-import org.apache.avro.generic.{ GenericDatumReader, GenericDatumWriter, GenericData, GenericRecord }
+import org.apache.avro.generic.{ GenericData, GenericDatumReader, GenericDatumWriter, GenericRecord }
 import org.apache.avro.specific.{ SpecificDatumReader, SpecificDatumWriter }
+
+import jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User
 
 object UserSerDe {
   def main(args: Array[String]) {
-    println("SerDe with code generation")
+    println("### SerDe with code generation ###")
     serDeWithCodeGeneration()
     println()
 
-    println("SerDe without code generation")
+    println("### SerDe without code generation ###")
     serDeWithoutCodeGeneration()
     println()
   }
@@ -59,7 +61,7 @@ object UserSerDe {
     user1.put("favorite_number", 128)
 
     val user2 = new GenericData.Record(schema)
-    user2.put("name", "Bob")
+    user2.put("name", "ボブ")
     user2.put("favorite_number", 256)
 
     val file = new File("output", "users2.avro")
@@ -73,8 +75,8 @@ object UserSerDe {
     dataFileWriter.close()
 
     // deserialize
-    val userDatumReader = new SpecificDatumReader[User](classOf[User])
-    val dataFileReader = new DataFileReader[User](file, userDatumReader)
+    val userDatumReader = new GenericDatumReader[GenericRecord](schema)
+    val dataFileReader = new DataFileReader[GenericRecord](file, userDatumReader)
     dataFileReader.iterator().foreach(println)
   }
 }
