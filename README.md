@@ -1,1 +1,4 @@
-# serialization-examples
+# Avro
+```
+mvn generate-sources
+```
