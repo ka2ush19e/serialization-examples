@@ -5,9 +5,9 @@ import java.io.File
 import scala.collection.JavaConversions._
 
 import org.apache.avro.Schema
-import org.apache.avro.file.{ DataFileReader, DataFileWriter }
-import org.apache.avro.generic.{ GenericData, GenericDatumReader, GenericDatumWriter, GenericRecord }
-import org.apache.avro.specific.{ SpecificDatumReader, SpecificDatumWriter }
+import org.apache.avro.file.{DataFileReader, DataFileWriter}
+import org.apache.avro.generic.{GenericData, GenericDatumReader, GenericDatumWriter, GenericRecord}
+import org.apache.avro.specific.{SpecificDatumReader, SpecificDatumWriter}
 
 import jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User
 

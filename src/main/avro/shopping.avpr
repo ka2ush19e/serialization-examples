@@ -1,0 +1,39 @@
+{
+  "namespace": "jp.gr.java_conf.ka2ush19e.serializations.avro.protocol",
+  "protocol": "Shopping",
+  "types": [
+    {
+      "name": "ItemPurchase",
+      "type": "record",
+      "fields": [
+        {
+          "name": "user",
+          "type": "string"
+        },
+        {
+          "name": "item",
+          "type": "string"
+        },
+        {
+          "name": "quantity",
+          "type": "int"
+        },
+        {
+          "name": "unit_price",
+          "type": "int"
+        }
+      ]
+    }
+  ],
+  "messages": {
+    "purchase": {
+      "request": [
+        {
+          "name": "item_purchase",
+          "type": "ItemPurchase"
+        }
+      ],
+      "response": "string"
+    }
+  }
+}
