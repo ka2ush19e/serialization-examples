@@ -99,5 +99,8 @@ project/plugins/project/
 # sclaenv
 .scala-version
 
+# sbtenv
+.sbt-version
+
 # Output
 output/
