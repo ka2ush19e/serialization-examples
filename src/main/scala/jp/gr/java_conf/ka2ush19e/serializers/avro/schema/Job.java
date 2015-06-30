@@ -3,7 +3,7 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package jp.gr.java_conf.ka2ush19e.serializations.avro.schema;  
+package jp.gr.java_conf.ka2ush19e.serializers.avro.schema;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public enum Job { 

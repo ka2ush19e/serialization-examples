@@ -1,0 +1,40 @@
+option java_outer_classname = "CompanyProto";
+option java_package = "jp.gr.java_conf.ka2ush19e.serializers.protobuf";
+option java_generic_services = true;
+
+message Company {
+  required string name = 1;
+  repeated Employee employee = 2;
+}
+
+message Employee {
+  required string name = 1;
+  required Job job = 2;
+}
+
+enum Job {
+  SALES = 0;
+  ENGINEER = 1;
+  ANALYST = 2;
+}
+
+service CompanyService {
+  rpc Get(GetRequest) returns (GetResponse);
+  rpc AddEmployee(AddEmployeeRequest) returns (AddEmployeeResponse);
+}
+
+message GetRequest {
+}
+
+message GetResponse {
+  required string result = 1;
+  required Company company = 2;
+}
+
+message AddEmployeeRequest {
+  required Employee employee = 1;
+}
+
+message AddEmployeeResponse {
+  required string result = 1;
+}

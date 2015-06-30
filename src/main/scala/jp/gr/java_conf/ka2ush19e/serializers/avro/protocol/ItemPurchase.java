@@ -3,7 +3,7 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package jp.gr.java_conf.ka2ush19e.serializations.avro.protocol;  
+package jp.gr.java_conf.ka2ush19e.serializers.avro.protocol;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ItemPurchase extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
@@ -115,18 +115,18 @@ public class ItemPurchase extends org.apache.avro.specific.SpecificRecordBase im
   }
 
   /** Creates a new ItemPurchase RecordBuilder */
-  public static jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder newBuilder() {
-    return new jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder();
+  public static jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder newBuilder() {
+    return new jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder();
   }
   
   /** Creates a new ItemPurchase RecordBuilder by copying an existing Builder */
-  public static jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder newBuilder(jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder other) {
-    return new jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder(other);
+  public static jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder newBuilder(jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder other) {
+    return new jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder(other);
   }
   
   /** Creates a new ItemPurchase RecordBuilder by copying an existing ItemPurchase instance */
-  public static jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder newBuilder(jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase other) {
-    return new jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder(other);
+  public static jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder newBuilder(jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase other) {
+    return new jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder(other);
   }
   
   /**
@@ -142,11 +142,11 @@ public class ItemPurchase extends org.apache.avro.specific.SpecificRecordBase im
 
     /** Creates a new Builder */
     private Builder() {
-      super(jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.SCHEMA$);
+      super(jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder other) {
+    private Builder(jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.user)) {
         this.user = data().deepCopy(fields()[0].schema(), other.user);
@@ -167,8 +167,8 @@ public class ItemPurchase extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Creates a Builder by copying an existing ItemPurchase instance */
-    private Builder(jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase other) {
-            super(jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.SCHEMA$);
+    private Builder(jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase other) {
+            super(jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.SCHEMA$);
       if (isValidValue(fields()[0], other.user)) {
         this.user = data().deepCopy(fields()[0].schema(), other.user);
         fieldSetFlags()[0] = true;
@@ -193,7 +193,7 @@ public class ItemPurchase extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Sets the value of the 'user' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder setUser(java.lang.CharSequence value) {
+    public jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder setUser(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.user = value;
       fieldSetFlags()[0] = true;
@@ -206,7 +206,7 @@ public class ItemPurchase extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Clears the value of the 'user' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder clearUser() {
+    public jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder clearUser() {
       user = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -218,7 +218,7 @@ public class ItemPurchase extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Sets the value of the 'item' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder setItem(java.lang.CharSequence value) {
+    public jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder setItem(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.item = value;
       fieldSetFlags()[1] = true;
@@ -231,7 +231,7 @@ public class ItemPurchase extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Clears the value of the 'item' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder clearItem() {
+    public jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder clearItem() {
       item = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -243,7 +243,7 @@ public class ItemPurchase extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Sets the value of the 'quantity' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder setQuantity(int value) {
+    public jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder setQuantity(int value) {
       validate(fields()[2], value);
       this.quantity = value;
       fieldSetFlags()[2] = true;
@@ -256,7 +256,7 @@ public class ItemPurchase extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Clears the value of the 'quantity' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder clearQuantity() {
+    public jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder clearQuantity() {
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -267,7 +267,7 @@ public class ItemPurchase extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Sets the value of the 'unit_price' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder setUnitPrice(int value) {
+    public jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder setUnitPrice(int value) {
       validate(fields()[3], value);
       this.unit_price = value;
       fieldSetFlags()[3] = true;
@@ -280,7 +280,7 @@ public class ItemPurchase extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Clears the value of the 'unit_price' field */
-    public jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase.Builder clearUnitPrice() {
+    public jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase.Builder clearUnitPrice() {
       fieldSetFlags()[3] = false;
       return this;
     }

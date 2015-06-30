@@ -1,4 +1,4 @@
-package jp.gr.java_conf.ka2ush19e.serializations.avro
+package jp.gr.java_conf.ka2ush19e.serializers.avro
 
 import java.io.File
 
@@ -9,7 +9,7 @@ import org.apache.avro.file.{ DataFileReader, DataFileWriter }
 import org.apache.avro.generic._
 import org.apache.avro.specific.{ SpecificDatumReader, SpecificDatumWriter }
 
-import jp.gr.java_conf.ka2ush19e.serializations.avro.schema.{ Company, Employee, Job }
+import jp.gr.java_conf.ka2ush19e.serializers.avro.schema.{ Company, Employee, Job }
 
 object CompanySerDe {
   def main(args: Array[String]) {

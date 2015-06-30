@@ -4,7 +4,7 @@
  *   rev: a470ba0b90af37c6dfc4b19c5258652a8e7f706e
  *   built at: 20150625-095056
  */
-package jp.gr.java_conf.ka2ush19e.serializations.thrift.company
+package jp.gr.java_conf.ka2ush19e.serializers.thrift.company
 
 import com.twitter.scrooge.{
   LazyTProtocol,
@@ -22,9 +22,9 @@ import scala.collection.mutable.{
 import scala.collection.{Map, Set}
 
 
-object EmployeeNotFound extends ThriftStructCodec3[EmployeeNotFound] {
+object Company extends ThriftStructCodec3[Company] {
   private val NoPassthroughFields = immutable$Map.empty[Short, TFieldBlob]
-  val Struct = new TStruct("EmployeeNotFound")
+  val Struct = new TStruct("Company")
   val NameField = new TField("name", TType.STRING, 1)
   val NameFieldManifest = implicitly[Manifest[String]]
 
@@ -50,11 +50,11 @@ object EmployeeNotFound extends ThriftStructCodec3[EmployeeNotFound] {
   /**
    * Checks that all required fields are non-null.
    */
-  def validate(_item: EmployeeNotFound): Unit = {
+  def validate(_item: Company): Unit = {
   }
 
-  def withoutPassthroughFields(original: EmployeeNotFound): EmployeeNotFound =
-    new EmployeeNotFound(
+  def withoutPassthroughFields(original: Company): Company =
+    new Immutable(
       name =
         {
           val field = original.name
@@ -62,11 +62,69 @@ object EmployeeNotFound extends ThriftStructCodec3[EmployeeNotFound] {
         }
     )
 
-  override def encode(_item: EmployeeNotFound, _oproto: TProtocol): Unit = {
+  override def encode(_item: Company, _oproto: TProtocol): Unit = {
     _item.write(_oproto)
   }
 
-override def decode(_iprot: TProtocol): EmployeeNotFound = {
+  private[this] def lazyDecode(_iprot: LazyTProtocol): Company = {
+
+    var nameOffset: Int = -1
+
+    var _passthroughFields: Builder[(Short, TFieldBlob), immutable$Map[Short, TFieldBlob]] = null
+    var _done = false
+    val _start_offset = _iprot.offset
+
+    _iprot.readStructBegin()
+    while (!_done) {
+      val _field = _iprot.readFieldBegin()
+      if (_field.`type` == TType.STOP) {
+        _done = true
+      } else {
+        _field.id match {
+          case 1 =>
+            _field.`type` match {
+              case TType.STRING =>
+                nameOffset = _iprot.offsetSkipString
+    
+              case _actualType =>
+                val _expectedType = TType.STRING
+                throw new TProtocolException(
+                  "Received wrong type for field 'name' (expected=%s, actual=%s).".format(
+                    ttypeToString(_expectedType),
+                    ttypeToString(_actualType)
+                  )
+                )
+            }
+          case _ =>
+            if (_passthroughFields == null)
+              _passthroughFields = immutable$Map.newBuilder[Short, TFieldBlob]
+            _passthroughFields += (_field.id -> TFieldBlob.read(_field, _iprot))
+        }
+        _iprot.readFieldEnd()
+      }
+    }
+    _iprot.readStructEnd()
+
+    new LazyImmutable(
+      _iprot,
+      _iprot.buffer,
+      _start_offset,
+      _iprot.offset,
+      nameOffset,
+      if (_passthroughFields == null)
+        NoPassthroughFields
+      else
+        _passthroughFields.result()
+    )
+  }
+
+  override def decode(_iprot: TProtocol): Company =
+    _iprot match {
+      case i: LazyTProtocol => lazyDecode(i)
+      case i => eagerDecode(i)
+    }
+
+  private[this] def eagerDecode(_iprot: TProtocol): Company = {
     var name: String = null
     var _passthroughFields: Builder[(Short, TFieldBlob), immutable$Map[Short, TFieldBlob]] = null
     var _done = false
@@ -101,7 +159,7 @@ override def decode(_iprot: TProtocol): EmployeeNotFound = {
     }
     _iprot.readStructEnd()
 
-    new EmployeeNotFound(
+    new Immutable(
       name,
       if (_passthroughFields == null)
         NoPassthroughFields
@@ -112,12 +170,12 @@ override def decode(_iprot: TProtocol): EmployeeNotFound = {
 
   def apply(
     name: String
-  ): EmployeeNotFound =
-    new EmployeeNotFound(
+  ): Company =
+    new Immutable(
       name
     )
 
-  def unapply(_item: EmployeeNotFound): _root_.scala.Option[String] = _root_.scala.Some(_item.name)
+  def unapply(_item: Company): _root_.scala.Option[String] = _root_.scala.Some(_item.name)
 
 
   @inline private def readNameValue(_iprot: TProtocol): String = {
@@ -135,22 +193,92 @@ override def decode(_iprot: TProtocol): EmployeeNotFound = {
   }
 
 
-}
+  object Immutable extends ThriftStructCodec3[Company] {
+    override def encode(_item: Company, _oproto: TProtocol): Unit = { _item.write(_oproto) }
+    override def decode(_iprot: TProtocol): Company = Company.decode(_iprot)
+    override lazy val metaData: ThriftStructMetaData[Company] = Company.metaData
+  }
 
-class EmployeeNotFound(
-    val name: String,
-    val _passthroughFields: immutable$Map[Short, TFieldBlob])
-  extends ThriftException with com.twitter.finagle.SourcedException with ThriftStruct
-  with scala.Product1[String]
-  with java.io.Serializable
-{
-  import EmployeeNotFound._
+  /**
+   * The default read-only implementation of Company.  You typically should not need to
+   * directly reference this class; instead, use the Company.apply method to construct
+   * new instances.
+   */
+  class Immutable(
+      val name: String,
+      override val _passthroughFields: immutable$Map[Short, TFieldBlob])
+    extends Company {
     def this(
       name: String
     ) = this(
       name,
       Map.empty
     )
+  }
+
+  /**
+   * This is another Immutable, this however keeps strings as lazy values that are lazily decoded from the backing
+   * array byte on read.
+   */
+  private[this] class LazyImmutable(
+      _proto: LazyTProtocol,
+      _buf: Array[Byte],
+      _start_offset: Int,
+      _end_offset: Int,
+      nameOffset: Int,
+      override val _passthroughFields: immutable$Map[Short, TFieldBlob])
+    extends Company {
+
+    override def write(_oprot: TProtocol): Unit = {
+      _oprot match {
+        case i: LazyTProtocol => i.writeRaw(_buf, _start_offset, _end_offset - _start_offset)
+        case _ => super.write(_oprot)
+      }
+    }
+
+    lazy val name: String =
+      if (nameOffset == -1)
+        null
+      else {
+        _proto.decodeString(_buf, nameOffset)
+      }
+
+    /**
+     * Override the super hash code to make it a lazy val rather than def.
+     *
+     * Calculating the hash code can be expensive, caching it where possible
+     * can provide signifigant performance wins. (Key in a hash map for instance)
+     * Usually not safe since the normal constructor will accept a mutable map or
+     * set as an arg
+     * Here however we control how the class is generated from serialized data.
+     * With the class private and the contract that we throw away our mutable references
+     * having the hash code lazy here is safe.
+     */
+    override lazy val hashCode = super.hashCode
+  }
+
+  /**
+   * This Proxy trait allows you to extend the Company trait with additional state or
+   * behavior and implement the read-only methods from Company using an underlying
+   * instance.
+   */
+  trait Proxy extends Company {
+    protected def _underlying_Company: Company
+    override def name: String = _underlying_Company.name
+    override def _passthroughFields = _underlying_Company._passthroughFields
+  }
+}
+
+trait Company
+  extends ThriftStruct
+  with scala.Product1[String]
+  with java.io.Serializable
+{
+  import Company._
+
+  def name: String
+
+  def _passthroughFields: immutable$Map[Short, TFieldBlob] = immutable$Map.empty
 
   def _1 = name
 
@@ -170,7 +298,7 @@ class EmployeeNotFound(
             case 1 =>
               if (name ne null) {
                 writeNameValue(name, _oprot)
-                _root_.scala.Some(EmployeeNotFound.NameField)
+                _root_.scala.Some(Company.NameField)
               } else {
                 _root_.scala.None
               }
@@ -199,7 +327,7 @@ class EmployeeNotFound(
    * is unknown and passthrough fields are enabled, then the blob will be stored in
    * _passthroughFields.
    */
-  def setField(_blob: TFieldBlob): EmployeeNotFound = {
+  def setField(_blob: TFieldBlob): Company = {
     var name: String = this.name
     var _passthroughFields = this._passthroughFields
     _blob.id match {
@@ -207,7 +335,7 @@ class EmployeeNotFound(
         name = readNameValue(_blob.read)
       case _ => _passthroughFields += (_blob.id -> _blob)
     }
-    new EmployeeNotFound(
+    new Immutable(
       name,
       _passthroughFields
     )
@@ -218,7 +346,7 @@ class EmployeeNotFound(
    * known, it is reverted to its default value; if the field is unknown, it is removed
    * from the passthroughFields map, if present.
    */
-  def unsetField(_fieldId: Short): EmployeeNotFound = {
+  def unsetField(_fieldId: Short): Company = {
     var name: String = this.name
 
     _fieldId match {
@@ -226,7 +354,7 @@ class EmployeeNotFound(
         name = null
       case _ =>
     }
-    new EmployeeNotFound(
+    new Immutable(
       name,
       _passthroughFields - _fieldId
     )
@@ -237,11 +365,11 @@ class EmployeeNotFound(
    * known, it is reverted to its default value; if the field is unknown, it is removed
    * from the passthroughFields map, if present.
    */
-  def unsetName: EmployeeNotFound = unsetField(1)
+  def unsetName: Company = unsetField(1)
 
 
   override def write(_oprot: TProtocol): Unit = {
-    EmployeeNotFound.validate(this)
+    Company.validate(this)
     _oprot.writeStructBegin(Struct)
     if (name ne null) writeNameField(name, _oprot)
     if (_passthroughFields.nonEmpty) {
@@ -254,23 +382,22 @@ class EmployeeNotFound(
   def copy(
     name: String = this.name,
     _passthroughFields: immutable$Map[Short, TFieldBlob] = this._passthroughFields
-  ): EmployeeNotFound =
-    new EmployeeNotFound(
+  ): Company =
+    new Immutable(
       name,
       _passthroughFields
     )
 
-  override def canEqual(other: Any): Boolean = other.isInstanceOf[EmployeeNotFound]
+  override def canEqual(other: Any): Boolean = other.isInstanceOf[Company]
 
   override def equals(other: Any): Boolean =
     _root_.scala.runtime.ScalaRunTime._equals(this, other) &&
-      _passthroughFields == other.asInstanceOf[EmployeeNotFound]._passthroughFields
+      _passthroughFields == other.asInstanceOf[Company]._passthroughFields
 
   override def hashCode: Int = _root_.scala.runtime.ScalaRunTime._hashCode(this)
 
   override def toString: String = _root_.scala.runtime.ScalaRunTime._toString(this)
 
-  override def getMessage: String = String.valueOf(name)
 
   override def productArity: Int = 1
 
@@ -279,5 +406,5 @@ class EmployeeNotFound(
     case _ => throw new IndexOutOfBoundsException(n.toString)
   }
 
-  override def productPrefix: String = "EmployeeNotFound"
+  override def productPrefix: String = "Company"
 }

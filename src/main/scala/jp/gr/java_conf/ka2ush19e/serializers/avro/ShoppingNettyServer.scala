@@ -1,4 +1,4 @@
-package jp.gr.java_conf.ka2ush19e.serializations.avro
+package jp.gr.java_conf.ka2ush19e.serializers.avro
 
 import java.net.InetSocketAddress
 
@@ -6,7 +6,7 @@ import org.apache.avro.ipc.NettyServer
 import org.apache.avro.ipc.specific.SpecificResponder
 import org.apache.avro.util.Utf8
 
-import jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.{ItemPurchase, Shopping}
+import jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.{ItemPurchase, Shopping}
 
 object ShoppingNettyServer {
 

@@ -4,7 +4,7 @@
  *   rev: a470ba0b90af37c6dfc4b19c5258652a8e7f706e
  *   built at: 20150625-095056
  */
-package jp.gr.java_conf.ka2ush19e.serializations.thrift.company
+package jp.gr.java_conf.ka2ush19e.serializers.thrift.company
 
 import com.twitter.finagle.{Service => FinagleService, Thrift}
 import com.twitter.finagle.stats.{NullStatsReceiver, StatsReceiver}

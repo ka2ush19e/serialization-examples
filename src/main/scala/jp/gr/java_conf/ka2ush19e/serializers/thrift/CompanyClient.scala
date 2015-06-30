@@ -1,9 +1,9 @@
-package jp.gr.java_conf.ka2ush19e.serializations.thrift
+package jp.gr.java_conf.ka2ush19e.serializers.thrift
 
 import com.twitter.finagle.Thrift
 import com.twitter.util.Await
 
-import jp.gr.java_conf.ka2ush19e.serializations.thrift.company.{CompanyService, EmployeeNotFound}
+import jp.gr.java_conf.ka2ush19e.serializers.thrift.company.{CompanyService, EmployeeNotFound}
 
 object CompanyClient {
   def main(args: Array[String]) {

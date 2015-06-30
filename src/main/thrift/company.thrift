@@ -1,4 +1,4 @@
-namespace java jp.gr.java_conf.ka2ush19e.serializations.thrift.company
+namespace java jp.gr.java_conf.ka2ush19e.serializers.thrift.company
 
 enum Job {
   SALES = 1

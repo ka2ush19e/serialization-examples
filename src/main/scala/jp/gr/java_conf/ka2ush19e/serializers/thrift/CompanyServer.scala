@@ -1,9 +1,9 @@
-package jp.gr.java_conf.ka2ush19e.serializations.thrift
+package jp.gr.java_conf.ka2ush19e.serializers.thrift
 
 import com.twitter.finagle.Thrift
 import com.twitter.util.{Await, Future}
 
-import jp.gr.java_conf.ka2ush19e.serializations.thrift.company._
+import jp.gr.java_conf.ka2ush19e.serializers.thrift.company._
 
 class CompanyServer extends CompanyService.FutureIface {
   val company = Company("FooTechnology")
@@ -18,6 +18,7 @@ class CompanyServer extends CompanyService.FutureIface {
     println("getEmployees")
     Future.value(employees)
   }
+
   override def addEmployee(name: String, job: Job): Future[Unit] = {
     println("addEmployee")
     Future.value()

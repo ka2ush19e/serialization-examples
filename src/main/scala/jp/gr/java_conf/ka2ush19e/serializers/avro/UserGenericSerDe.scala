@@ -1,4 +1,4 @@
-package jp.gr.java_conf.ka2ush19e.serializations.avro
+package jp.gr.java_conf.ka2ush19e.serializers.avro
 
 import java.io._
 

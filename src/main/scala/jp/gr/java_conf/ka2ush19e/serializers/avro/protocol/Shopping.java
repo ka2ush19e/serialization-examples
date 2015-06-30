@@ -3,17 +3,17 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package jp.gr.java_conf.ka2ush19e.serializations.avro.protocol;
+package jp.gr.java_conf.ka2ush19e.serializers.avro.protocol;
 
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public interface Shopping {
   public static final org.apache.avro.Protocol PROTOCOL = org.apache.avro.Protocol.parse("{\"protocol\":\"Shopping\",\"namespace\":\"jp.gr.java_conf.ka2ush19e.serializations.avro.protocol\",\"types\":[{\"type\":\"record\",\"name\":\"ItemPurchase\",\"fields\":[{\"name\":\"user\",\"type\":\"string\"},{\"name\":\"item\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"int\"},{\"name\":\"unit_price\",\"type\":\"int\"}]}],\"messages\":{\"purchase\":{\"request\":[{\"name\":\"item_purchase\",\"type\":\"ItemPurchase\"}],\"response\":\"string\"}}}");
-  java.lang.CharSequence purchase(jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase item_purchase) throws org.apache.avro.AvroRemoteException;
+  java.lang.CharSequence purchase(jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase item_purchase) throws org.apache.avro.AvroRemoteException;
 
   @SuppressWarnings("all")
   public interface Callback extends Shopping {
-    public static final org.apache.avro.Protocol PROTOCOL = jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.Shopping.PROTOCOL;
-    void purchase(jp.gr.java_conf.ka2ush19e.serializations.avro.protocol.ItemPurchase item_purchase, org.apache.avro.ipc.Callback<java.lang.CharSequence> callback) throws java.io.IOException;
+    public static final org.apache.avro.Protocol PROTOCOL = jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.Shopping.PROTOCOL;
+    void purchase(jp.gr.java_conf.ka2ush19e.serializers.avro.protocol.ItemPurchase item_purchase, org.apache.avro.ipc.Callback<java.lang.CharSequence> callback) throws java.io.IOException;
   }
 }

@@ -1,4 +1,4 @@
-package jp.gr.java_conf.ka2ush19e.serializations.avro
+package jp.gr.java_conf.ka2ush19e.serializers.avro
 
 import java.io._
 
@@ -8,7 +8,7 @@ import org.apache.avro.file.{DataFileReader, DataFileWriter}
 import org.apache.avro.io.{DecoderFactory, EncoderFactory}
 import org.apache.avro.specific.{SpecificDatumReader, SpecificDatumWriter}
 
-import jp.gr.java_conf.ka2ush19e.serializations.avro.schema.User
+import jp.gr.java_conf.ka2ush19e.serializers.avro.schema.User
 
 object UserSpecificSerDe {
   val users =

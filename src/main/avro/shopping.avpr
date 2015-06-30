@@ -1,5 +1,5 @@
 {
-  "namespace": "jp.gr.java_conf.ka2ush19e.serializations.avro.protocol",
+  "namespace": "jp.gr.java_conf.ka2ush19e.serializers.avro.protocol",
   "protocol": "Shopping",
   "types": [
     {
