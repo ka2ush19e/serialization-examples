@@ -13,7 +13,9 @@ libraryDependencies ++= Seq(
   "com.twitter" %% "scrooge-core" % "3.19.0",
   "com.twitter" %% "finagle-thrift" % "6.26.0",
   // Protocol Buffers
-  "com.google.protobuf" % "protobuf-java" % "2.6.1"
+  "com.google.protobuf" % "protobuf-java" % "2.6.1",
+  // Kryo
+  "com.twitter" %% "chill" % "0.6.0"
 )
 
 resolvers += "twitter" at "http://maven.twttr.com"
